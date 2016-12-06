@@ -144,7 +144,7 @@ friends:
 #friends: false
 
 #是否开启“关于我”。
-aboutme: 安静地做一个前端极客，努力地写好每一行代码。如果你没有技术信仰，那你就不要从事这一职业。人生本来就不长，何必要做着自己没有激情的事情呢！
+aboutme: 有一点极客精神，有一点技术梦想
 #aboutme: false
 
 # 是否在新窗口打开链接
@@ -183,7 +183,7 @@ baidu_tongji: true
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:
-  on: true
+  on: false
   site_visit: 本站到访数
   page_visit: 本页阅读量
 
