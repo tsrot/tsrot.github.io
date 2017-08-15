@@ -70,8 +70,8 @@ theme: yelee
 deploy:
   type: git
   message: Site updated
-  repo:
-    github: git@github.com:tsrot/tsrot.github.io.git,master
+  repo: https://github.com/tsrot/tsrot.github.io.git 
+  branch: master
 
 feed:
   type: atom
