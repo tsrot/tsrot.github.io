@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS原型和原型链 | Tsrot Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在JavaScript的使用过程中，我们经常会遇到prototype，可能了解一点，它是一个对象的原型，用来做原型继承的。这样去理解就有点不准确了，今天就让我们深入的去了解它。">
+<meta name="keywords" content="原型,原型链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原型和原型链">
+<meta property="og:url" content="http://blog.xieliqun.com/2016/08/21/prototype/index.html">
+<meta property="og:site_name" content="Tsrot Space">
+<meta property="og:description" content="在JavaScript的使用过程中，我们经常会遇到prototype，可能了解一点，它是一个对象的原型，用来做原型继承的。这样去理解就有点不准确了，今天就让我们深入的去了解它。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-01T07:04:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原型和原型链">
+<meta name="twitter:description" content="在JavaScript的使用过程中，我们经常会遇到prototype，可能了解一点，它是一个对象的原型，用来做原型继承的。这样去理解就有点不准确了，今天就让我们深入的去了解它。">
+  
+    <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+  
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?true";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="http://7xqcdm.com1.z0.glb.clouddn.com/tsrot.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Tsrot</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">This is tsrot blog</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/categories/wangzhuan">网赚</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:me@xieliqun.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="http://github.com/tsrot" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Arguments/" style="font-size: 10px;">Arguments</a> <a href="/tags/CSS-DIV布局/" style="font-size: 10px;">CSS+DIV布局</a> <a href="/tags/CSS坑/" style="font-size: 10px;">CSS坑</a> <a href="/tags/JS继承/" style="font-size: 10px;">JS继承</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Scope-chain/" style="font-size: 13.33px;">Scope chain</a> <a href="/tags/Yeoman/" style="font-size: 10px;">Yeoman</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/bind/" style="font-size: 10px;">bind</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/html2json/" style="font-size: 10px;">html2json</a> <a href="/tags/ionic/" style="font-size: 10px;">ionic</a> <a href="/tags/json2html/" style="font-size: 10px;">json2html</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/sublime插件/" style="font-size: 10px;">sublime插件</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/window-name/" style="font-size: 10px;">window.name</a> <a href="/tags/个人笔记/" style="font-size: 20px;">个人笔记</a> <a href="/tags/事件委托/" style="font-size: 10px;">事件委托</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/事件绑定/" style="font-size: 10px;">事件绑定</a> <a href="/tags/作用域/" style="font-size: 10px;">作用域</a> <a href="/tags/前端分页/" style="font-size: 10px;">前端分页</a> <a href="/tags/前端总结/" style="font-size: 16.67px;">前端总结</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/心得感受/" style="font-size: 10px;">心得感受</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/我的相册/" style="font-size: 10px;">我的相册</a> <a href="/tags/户外运动/" style="font-size: 10px;">户外运动</a> <a href="/tags/折腾/" style="font-size: 10px;">折腾</a> <a href="/tags/移动端/" style="font-size: 13.33px;">移动端</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/跨域/" style="font-size: 13.33px;">跨域</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.yowebapp.com">Yeoman 中文</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://fex.baidu.com/">FEX</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://isux.tencent.com/">ISUX</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">有一点极客精神，有一点技术梦想</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Tsrot</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="http://7xqcdm.com1.z0.glb.clouddn.com/tsrot.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Tsrot</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">This is tsrot blog</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/categories/wangzhuan">网赚</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:me@xieliqun.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="http://github.com/tsrot" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/21/prototype/" class="article-date">
+      <time datetime="2016-08-20T19:32:55.000Z" itemprop="datePublished">2016-08-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS原型和原型链
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型/">原型</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链/">原型链</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>在JavaScript的使用过程中，我们经常会遇到prototype，可能了解一点，它是一个对象的原型，用来做原型继承的。这样去理解就有点不准确了，今天就让我们深入的去了解它。<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h3 id="了解一些概念"><a href="#了解一些概念" class="headerlink" title="了解一些概念"></a>了解一些概念</h3><p>在读这篇文章之前，你应该去在自己的脑海问几个问题：<br>1、什么是原型？<br>2、什么事原型链？<br>3、prototype与__proto__有什么不同，有什么联系？<br>4、constructor与面两个有什么联系，怎么用？</p>
+<p>如果你把上面这四个问题都解决了，那你就真正了解了JS的原型和原型链。接下来，咱们一个一个问题去解决。</p>
+<h3 id="什么是原型"><a href="#什么是原型" class="headerlink" title="什么是原型"></a>什么是原型</h3><p>JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。每个对象都有原型（null和undefined除外），你可以把它理解为对象的默认属性和方法。</p>
+<p>你可以把下面的代码在浏览器打印出来看一下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype); <span class="comment">//Object&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="built_in">console</span>.log(o.prototype);  <span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype); <span class="comment">//[Symbol(Symbol.unscopables): Object]</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span>.prototype); <span class="comment">//function()&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"hello"</span>);</div><div class="line">&#125;</div><div class="line">hello.prototype = <span class="string">"hello world"</span>;</div><div class="line"><span class="built_in">console</span>.log(hello.prototype); <span class="comment">//hello world</span></div></pre></td></tr></table></figure>
+<p><strong>Object</strong>：Object是一个函数对象，Object的原型就是一个Object对象，它里面存在着一些对象的方法和属性，例如最常见的toString方法。</p>
+<p><strong>新建对象</strong>：用new Object或者{}建的对象是普通对象，它没有prototype属性，只有__proto__属性，它指向Object.prototype。</p>
+<p><strong>Array</strong>：Array也是一个函数对象，它的原型就是Array.prototype，它里面存在着一些数组的方法和属性，例如常见的push，pop等方法。</p>
+<p><strong>Function</strong>：Function也是一个函数对象，但它有点特殊，它的原型就是一个function空函数。</p>
+<p><strong>自定义函数</strong>：它的原型就是你给它指定的那个东西。如果你不指定，那它的原型就是一个Object.prototype。</p>
+<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在 javaScript 中，每个对象都有一个指向它的原型（prototype）对象的内部链接。这个原型对象又有自己的原型，直到某个对象的原型为 null 为止（也就是不再有原型指向），组成这条链的最后一环。这种一级一级的链结构就称为原型链（prototype chain）。</p>
+<p>JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依此层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">	a:<span class="number">1</span>,</div><div class="line">	b:<span class="number">2</span></div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(o.toString()); <span class="comment">//不报错，o上没有toString方法，但是Object上有</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(o.push(<span class="string">"c"</span>)); <span class="comment">//报错，o上没有这个方法，Object上也没有这个方法。</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(o.a); <span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(o.c); <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<p>当你用new Object或者直接定义一个对象时，它的原型链就是：<br>o  ==》 Object.prototype ==》 null<br>但你访问o上没有的属性或方法时，JS会往Object.prototype上寻找该属性和方法。如果有则直接返回，如果没有，方法则报错，这个方法未定义，属性则返回undefined。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;<span class="attr">age</span>:<span class="number">24</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> tsrot = <span class="keyword">new</span> Person(<span class="string">"tsrot"</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(tsrot.name); <span class="comment">//tsrot</span></div><div class="line"><span class="built_in">console</span>.log(tsrot.age);  <span class="comment">//24</span></div><div class="line"><span class="built_in">console</span>.log(tsrot.toString()); <span class="comment">//[object Object]</span></div></pre></td></tr></table></figure>
+<p>当你用构造函数（构造函数我们一般首字母大写）建立一个对象时，它的原型链就是：<br>tsrot  ==》 Person.prototype ==》 Object.prototype ==》 null<br>如果没有定义Person.prototype这一环，则直接跳到下一环。</p>
+<p>来点更复杂的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">"i am parent"</span>;</div><div class="line">&#125;</div><div class="line">Parent.prototype = &#123;<span class="attr">age</span>:<span class="number">24</span>&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">"i am child"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype); <span class="comment">//让Child的原型指向Parent的原型</span></div><div class="line">Child.prototype.constructor = Child; <span class="comment">//把child的构造函数指向回来，否则它将指向Parent。虽然在这没什么影响，但要养成代码的严谨性</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(child.name); <span class="comment">//i am child</span></div><div class="line"><span class="built_in">console</span>.log(child.age);   <span class="comment">//24</span></div><div class="line"><span class="built_in">console</span>.log(child.toString()); <span class="comment">//[object Object]</span></div></pre></td></tr></table></figure></p>
+<p>当你需要父类的属性和方法时，你可以把它的原型指向父类的原型。此时的原型链就是：<br>child ==》 Parent.prototype ==》 Object.prototype ==》 null</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[1,2,3]</span></div><div class="line">arr.push(<span class="number">4</span>);</div><div class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[1,2,3,4]</span></div></pre></td></tr></table></figure>
+<p>数组也是一个对象，不过它是由Array构造函数new而来的，所以它的原型链就是：<br>arr ==》 Array.prototype ==》 Object.prototype ==》 null</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> hello = <span class="string">"i am function"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fun.name); <span class="comment">//fun</span></div></pre></td></tr></table></figure>
+<p>fun是一个函数对象，它是由Function构造函数new而来的，所以它的原型链就是：<br>fun ==》 Function.prototype  ==》 Object.prototype ==》 null<br>fun它没有name属性，但是Function它有，所以这个name就是Function原型上的。</p>
+<h3 id="prototype与-proto"><a href="#prototype与-proto" class="headerlink" title="prototype与__proto__"></a>prototype与__proto__</h3><p>在Javascript中，每个函数都有一个原型属性prototype指向自身的原型，而由这个函数创建的对象也有一个__proto__属性指向这个原型，而函数的原型是一个对象（函数点prototype也是一个普通对象，Function.prototype除外,它是函数对象，但它很特殊，他没有prototype属性），所以这个对象也会有一个__proto__指向自己的原型，这样逐层深入直到Object对象的原型，这样就形成了原型链。普通对象没有prototype，但有__proto__属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f1.prototype) <span class="comment">//Object&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> f1.prototype) <span class="comment">//Object</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Function</span>.prototype) <span class="comment">// Function，这个特殊</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Object</span>.prototype) <span class="comment">//Object</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Function</span>.prototype.prototype) <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<p>JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做__proto__的内置属性，用于指向创建它的函数对象的原型对象prototype。</p>
+<p><strong>普通对象的__proto__</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">name</span>:<span class="string">"tsrot"</span>&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(o.__proto__); <span class="comment">//Object&#123;&#125;</span></div><div class="line"><span class="built_in">console</span>.log(o.prototype); <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(o.__proto__ === <span class="built_in">Object</span>.prototype);  <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p><strong>构造对象的__proto__</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">"i am parent"</span>;</div><div class="line">&#125;</div><div class="line">Parent.prototype = &#123;<span class="attr">age</span>:<span class="number">24</span>&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">"i am child"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype);</div><div class="line">Child.prototype.constructor = Child;</div><div class="line"></div><div class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(child.__proto__); <span class="comment">//Object&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Child.prototype); <span class="comment">//Object&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(child.__proto__ === Child.prototype); <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Parent.prototype.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p><strong>数组的__proto__</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr.__proto__);  <span class="comment">//[Symbol(Symbol.unscopables): Object]</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype); <span class="comment">//[Symbol(Symbol.unscopables): Object]</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr.__proto__ === <span class="built_in">Array</span>.prototype); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p><strong>函数的__proto__</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> hello = <span class="string">"i am function"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">fun.prototype = &#123;<span class="attr">name</span>:<span class="string">"tsrot"</span>&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fun.prototype); <span class="comment">//Object &#123;name: "tsrot"&#125;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fun.__proto__); <span class="comment">//function()&#123;&#125;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fun.prototype === fun.__proto__); <span class="comment">//false</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(fun.__proto__ === <span class="built_in">Function</span>.prototype); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<h3 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h3><p>原型对象prototype中都有个预定义的constructor属性，用来引用它的函数对象。这是一种循环引用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Person.prototype.constructor === Person); <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Function</span>.prototype.constructor === <span class="built_in">Function</span>); <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.constructor === <span class="built_in">Object</span>); <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<p>用构造函数创建的对象，它的constructor属性就是它的构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(person.constructor === Person); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1、<a href="https://www.toptal.com/javascript/javascript-prototypes-scopes-and-performance-what-you-need-to-know" target="_blank" rel="external">JavaScript Prototype Chains</a><br>2、<a href="https://javascriptweblog.wordpress.com/2010/06/07/understanding-javascript-prototypes/" target="_blank" rel="external">Understanding JavaScript Prototypes</a><br>3、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="external">继承与原型链</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/08/21/prototype/">JS原型和原型链</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
+        <p><span>发布时间:</span>2016年08月21日 - 04时32分</p>
+        <p><span>最后更新:</span>2017年10月01日 - 15时04分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/21/prototype/" title="JS原型和原型链">http://blog.xieliqun.com/2016/08/21/prototype/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/08/21/prototype/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/08/25/postMessage-cross-domain/">
+                    html5 API postMessage跨域详解
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/08/14/arguments/">
+                    Arguments对象作用深度研究
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#了解一些概念"><span class="toc-number">1.</span> <span class="toc-text">了解一些概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是原型"><span class="toc-number">2.</span> <span class="toc-text">什么是原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是原型链"><span class="toc-number">3.</span> <span class="toc-text">什么是原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prototype与-proto"><span class="toc-number">4.</span> <span class="toc-text">prototype与__proto__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#constructor属性"><span class="toc-number">5.</span> <span class="toc-text">constructor属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章"><span class="toc-number">6.</span> <span class="toc-text">参考文章</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+        <section class="youyan" id="comments">
+  <div id="uyan_frame"></div>
+  <script src="http://v2.uyan.cc/code/uyan.js?uid=2141621"></script>
+</section>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/08/25/postMessage-cross-domain/" title="上一篇: html5 API postMessage跨域详解">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/08/14/arguments/" title="下一篇: Arguments对象作用深度研究">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/03/wangzhuan-1/">wangzhuan-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/06/react-study/">React学习资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/react-zhihu/">模仿知乎界面的一个简单React demo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/scope-chain-2/">深入了解JavaScript，优化作用域链（2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/scope-chain/">深入了解JavaScript，从作用域链开始（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/yeoman-chinese-website/">Yeoman 中文网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/27/online-IDE-node-enviroment/">折腾：coding.net IDE node环境的安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/26/windowName-cross-domain/">window.name跨域详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/postMessage-cross-domain/">html5 API postMessage跨域详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/21/prototype/">JS原型和原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/arguments/">Arguments对象作用深度研究</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/event-delegate/">事件绑定、事件监听、事件委托</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/call-apply-bind/">JS中的call、apply、bind方法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/ajax/">AJAX工作原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/javascript-closure/">JavaScript闭包（closure）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/31/javascript重点和难点/">javascript重点和难点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/31/javscript-basics/">javscript中this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/我的sublime插件/">我的sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/17/ionic初学者文档/">ionic初学者文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/17/移动端页面重构/">移动端页面重构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/01/angular的同级通信方式详解/">关于angular的$emit,$broadcast,$on通信机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/busy/">busy</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/24/JS继承的几种方方法/">JS继承的几种方方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/html2json与json2html的实现/">html2json与json2html的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/19/CSS常见错误/">CSS常见错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/前端JavaScript分页/">前端JavaScript分页</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/我的户外运动之登深圳梧桐山/">我的户外运动之登深圳梧桐山</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/JavaScript静态页面值传递之Window-open/">JavaScript静态页面值传递之Window.open</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/JavaScript静态页面值传递之Cookie/">JavaScript静态页面值传递之Cookie</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/03/Javascript静态页面值传递之URL/">Javascript静态页面值传递之URL</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/24/第一篇博客/">第一篇博客</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Tsrot
+            </div>
+            <div class="footer-right">
+                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <style>
+        body {
+          background: lightgray;
+        }
+        #container .left-col {
+          background: white;
+        }
+        .article-inner {
+          background: white;
+          margin-bottom: 1em;
+        }
+        .post-nav-button {
+          background: #ececec;
+        }
+        #header .header-nav .social #GitHub {
+          background-color: #bfd3ec;
+        }
+        #post-nav-button a {
+          background: rgba(215, 216, 215, .2);
+        }
+        .post-list {
+          background: white;
+        }
+    </style>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

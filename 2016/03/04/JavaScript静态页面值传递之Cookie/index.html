@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript静态页面值传递之Cookie | Tsrot Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="现在PC配置越来越好，有些东西可以在前端做，并且也能够实现很好的性能。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···">
+<meta name="keywords" content="前端总结,个人笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript静态页面值传递之Cookie">
+<meta property="og:url" content="http://blog.xieliqun.com/2016/03/04/JavaScript静态页面值传递之Cookie/index.html">
+<meta property="og:site_name" content="Tsrot Space">
+<meta property="og:description" content="现在PC配置越来越好，有些东西可以在前端做，并且也能够实现很好的性能。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-01T07:04:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript静态页面值传递之Cookie">
+<meta name="twitter:description" content="现在PC配置越来越好，有些东西可以在前端做，并且也能够实现很好的性能。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···">
+  
+    <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+  
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?true";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="http://7xqcdm.com1.z0.glb.clouddn.com/tsrot.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Tsrot</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">This is tsrot blog</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/categories/wangzhuan">网赚</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:me@xieliqun.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="http://github.com/tsrot" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Arguments/" style="font-size: 10px;">Arguments</a> <a href="/tags/CSS-DIV布局/" style="font-size: 10px;">CSS+DIV布局</a> <a href="/tags/CSS坑/" style="font-size: 10px;">CSS坑</a> <a href="/tags/JS继承/" style="font-size: 10px;">JS继承</a> <a href="/tags/React/" style="font-size: 13.33px;">React</a> <a href="/tags/Scope-chain/" style="font-size: 13.33px;">Scope chain</a> <a href="/tags/Yeoman/" style="font-size: 10px;">Yeoman</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/bind/" style="font-size: 10px;">bind</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/html2json/" style="font-size: 10px;">html2json</a> <a href="/tags/ionic/" style="font-size: 10px;">ionic</a> <a href="/tags/json2html/" style="font-size: 10px;">json2html</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/sublime插件/" style="font-size: 10px;">sublime插件</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/window-name/" style="font-size: 10px;">window.name</a> <a href="/tags/个人笔记/" style="font-size: 20px;">个人笔记</a> <a href="/tags/事件委托/" style="font-size: 10px;">事件委托</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/事件绑定/" style="font-size: 10px;">事件绑定</a> <a href="/tags/作用域/" style="font-size: 10px;">作用域</a> <a href="/tags/前端分页/" style="font-size: 10px;">前端分页</a> <a href="/tags/前端总结/" style="font-size: 16.67px;">前端总结</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/心得感受/" style="font-size: 10px;">心得感受</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/我的相册/" style="font-size: 10px;">我的相册</a> <a href="/tags/户外运动/" style="font-size: 10px;">户外运动</a> <a href="/tags/折腾/" style="font-size: 10px;">折腾</a> <a href="/tags/移动端/" style="font-size: 13.33px;">移动端</a> <a href="/tags/程序员/" style="font-size: 10px;">程序员</a> <a href="/tags/跨域/" style="font-size: 13.33px;">跨域</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.yowebapp.com">Yeoman 中文</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://fex.baidu.com/">FEX</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://isux.tencent.com/">ISUX</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">有一点极客精神，有一点技术梦想</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Tsrot</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="http://7xqcdm.com1.z0.glb.clouddn.com/tsrot.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Tsrot</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">This is tsrot blog</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/categories/wangzhuan">网赚</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:me@xieliqun.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="http://github.com/tsrot" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-JavaScript静态页面值传递之Cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/04/JavaScript静态页面值传递之Cookie/" class="article-date">
+      <time datetime="2016-03-04T05:05:48.000Z" itemprop="datePublished">2016-03-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript静态页面值传递之Cookie
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人笔记/">个人笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端总结/">前端总结</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>现在PC配置越来越好，有些东西可以在前端做，并且也能够实现很好的性能。有些数据传递我们可以把它放到前端来操作（当然这些数据应该是无关安全性），所以今天我要在这分享关于前端页面值传递的方法之一···<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""><br>Cookie是浏览器存储少量命名数据.<br>它与某个特定的网页或网站关联在一起.<br>Cookie用来给浏览器提供内存,<br>以便脚本和服务器程序可以在一个页面中使用另一个页面的输入数据.<br><span style="color:red">注：此案例请放在服务器环境测试.</span></the></p>
+<p>post.html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"txt1"</span>&gt;</div><div class="line">&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> onclick=<span class="string">"setCookie('txt1',document.all.txt1.value);"</span> value=<span class="string">"Post"</span>&gt;</div><div class="line"></div><div class="line">&lt;script language=<span class="string">"javascript"</span> &gt;</div><div class="line"><span class="keyword">function</span> setCookie(name,value)</div><div class="line">&#123;</div><div class="line">/*</div><div class="line">*--------------- setCookie(name,value) -----------------</div><div class="line">* setCookie(name,value)</div><div class="line">* 功能:设置得变量name的值</div><div class="line">* 参数:name,字符串;value,字符串.</div><div class="line">* 实例:setCookie(<span class="string">'username'</span>,<span class="string">'baobao'</span>)</div><div class="line">*--------------- setCookie(name,value) -----------------</div><div class="line">*/</div><div class="line">   var Days = 30; //此 cookie 将被保存 30 天</div><div class="line">　　var exp　= new Date();</div><div class="line">   exp.setTime(exp.getTime() + Days*24*60*60*1000);</div><div class="line">   document.cookie = name + <span class="string">"="</span>+ escape (value) + <span class="string">";expires="</span> + exp.toGMTString();</div><div class="line">   location.href = <span class="string">"read.html"</span>; //接收页面.</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>read.html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script language=<span class="string">"javascript"</span> &gt;</div><div class="line"><span class="keyword">function</span> getCookie(name)</div><div class="line">&#123;</div><div class="line">/*</div><div class="line">*--------------- getCookie(name) -----------------</div><div class="line">* getCookie(name)</div><div class="line">* 功能:取得变量name的值</div><div class="line">* 参数:name,字符串.</div><div class="line">* 实例:alert(getCookie(<span class="string">"baobao"</span>));</div><div class="line">*--------------- getCookie(name) -----------------</div><div class="line">*/</div><div class="line">   var arr = document.cookie.match(new RegExp(<span class="string">"(^| )"</span>+name+<span class="string">"=([^;]*)(;|$)"</span>));</div><div class="line">   <span class="keyword">if</span>(arr !=null) <span class="built_in">return</span> unescape(arr[2]); <span class="built_in">return</span> null;</div><div class="line">&#125;</div><div class="line">alert(getCookie(<span class="string">"txt1"</span>));</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p><span style="color:red">优点:可以在同源内的任意网页内访问.生命期可以设置.</span><br><span style="color:red">缺点:值长度有限制.</span></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/04/JavaScript静态页面值传递之Cookie/">JavaScript静态页面值传递之Cookie</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
+        <p><span>发布时间:</span>2016年03月04日 - 14时05分</p>
+        <p><span>最后更新:</span>2017年10月01日 - 15时04分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/04/JavaScript静态页面值传递之Cookie/" title="JavaScript静态页面值传递之Cookie">http://blog.xieliqun.com/2016/03/04/JavaScript静态页面值传递之Cookie/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/03/04/JavaScript静态页面值传递之Cookie/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/06/JavaScript静态页面值传递之Window-open/">
+                    JavaScript静态页面值传递之Window.open
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/03/Javascript静态页面值传递之URL/">
+                    Javascript静态页面值传递之URL
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+        <section class="youyan" id="comments">
+  <div id="uyan_frame"></div>
+  <script src="http://v2.uyan.cc/code/uyan.js?uid=2141621"></script>
+</section>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/03/06/JavaScript静态页面值传递之Window-open/" title="上一篇: JavaScript静态页面值传递之Window.open">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/03/03/Javascript静态页面值传递之URL/" title="下一篇: Javascript静态页面值传递之URL">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/03/wangzhuan-1/">wangzhuan-1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/06/react-study/">React学习资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/05/react-zhihu/">模仿知乎界面的一个简单React demo</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/scope-chain-2/">深入了解JavaScript，优化作用域链（2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/scope-chain/">深入了解JavaScript，从作用域链开始（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/yeoman-chinese-website/">Yeoman 中文网</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/27/online-IDE-node-enviroment/">折腾：coding.net IDE node环境的安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/26/windowName-cross-domain/">window.name跨域详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/postMessage-cross-domain/">html5 API postMessage跨域详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/21/prototype/">JS原型和原型链</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/arguments/">Arguments对象作用深度研究</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/event-delegate/">事件绑定、事件监听、事件委托</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/call-apply-bind/">JS中的call、apply、bind方法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/09/ajax/">AJAX工作原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/07/javascript-closure/">JavaScript闭包（closure）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/31/javascript重点和难点/">javascript重点和难点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/31/javscript-basics/">javscript中this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/我的sublime插件/">我的sublime插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/17/ionic初学者文档/">ionic初学者文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/17/移动端页面重构/">移动端页面重构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/01/angular的同级通信方式详解/">关于angular的$emit,$broadcast,$on通信机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/busy/">busy</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/24/JS继承的几种方方法/">JS继承的几种方方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/html2json与json2html的实现/">html2json与json2html的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/19/CSS常见错误/">CSS常见错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/前端JavaScript分页/">前端JavaScript分页</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/我的户外运动之登深圳梧桐山/">我的户外运动之登深圳梧桐山</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/06/JavaScript静态页面值传递之Window-open/">JavaScript静态页面值传递之Window.open</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/JavaScript静态页面值传递之Cookie/">JavaScript静态页面值传递之Cookie</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/03/Javascript静态页面值传递之URL/">Javascript静态页面值传递之URL</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/24/第一篇博客/">第一篇博客</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Tsrot
+            </div>
+            <div class="footer-right">
+                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <style>
+        body {
+          background: lightgray;
+        }
+        #container .left-col {
+          background: white;
+        }
+        .article-inner {
+          background: white;
+          margin-bottom: 1em;
+        }
+        .post-nav-button {
+          background: #ececec;
+        }
+        #header .header-nav .social #GitHub {
+          background-color: #bfd3ec;
+        }
+        #post-nav-button a {
+          background: rgba(215, 216, 215, .2);
+        }
+        .post-list {
+          background: white;
+        }
+    </style>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
