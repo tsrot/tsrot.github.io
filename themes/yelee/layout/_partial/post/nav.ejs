@@ -1,4 +1,20 @@
 <% if ((post.original != false && !is_page() && theme.copyright) || post.original){ %>
+    <% if (theme.dashang) { %>
+    <div class="shang">
+        <div class="qrcode">
+            <h3>打赏</h3>
+            <div class="pay mr-2">
+                <img src="/img/alipay.png" alt="支付宝" title="支付宝">
+                <h4>支付宝</h4>
+            </div>
+            <div class="pay">
+                <img src="/img/weixinpay.png" alt="微信" title="微信">
+                <h4>微信</h4>
+            </div>
+        </div>
+        <span>赏</span>
+    </div>
+    <% } %>
     <div class="copyright">
         <p><span>本文标题:</span><a href="<%- url_for(post.path) %>"><%= post.title %></a></p>
         <p><span>文章作者:</span><a href="/" title="访问 <%=theme.author%> 的个人博客"><%=theme.author%></a></p>
