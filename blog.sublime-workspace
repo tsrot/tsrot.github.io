@@ -1,0 +1,1052 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"d",
+				"document"
+			],
+			[
+				"img",
+				"imgUrl"
+			],
+			[
+				"github",
+				"githubApi"
+			],
+			[
+				"lo",
+				"loadData"
+			],
+			[
+				"in",
+				"industryName"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"LOCA",
+				"localStorage"
+			],
+			[
+				"add",
+				"addList"
+			],
+			[
+				"inde",
+				"indexList"
+			],
+			[
+				"index",
+				"indexList"
+			],
+			[
+				"$s",
+				"$scope	AngularJS"
+			],
+			[
+				"di",
+				"dispatch"
+			],
+			[
+				"con",
+				"containers"
+			],
+			[
+				"se",
+				"setVisibility"
+			],
+			[
+				"ma",
+				"mapStateToProps"
+			],
+			[
+				"to",
+				"todoApp"
+			],
+			[
+				"is",
+				"isRequired"
+			],
+			[
+				"map",
+				"mapDispatchToProps"
+			],
+			[
+				"Todo",
+				"TodoActions"
+			],
+			[
+				"pro",
+				"protocolBox"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"m",
+				"isModify"
+			],
+			[
+				"re",
+				"readOnly"
+			],
+			[
+				"bill",
+				"billOption"
+			],
+			[
+				"count",
+				"count"
+			],
+			[
+				"react",
+				"React"
+			],
+			[
+				"Rea",
+				"React"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"React",
+				"ReactDOM"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"quer",
+				"queryData"
+			],
+			[
+				"up",
+				"updateFlag"
+			],
+			[
+				"color",
+				"colorName"
+			],
+			[
+				"new",
+				"newData"
+			],
+			[
+				"sho",
+				"showModal"
+			],
+			[
+				"app",
+				"appid"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"log",
+				"logList"
+			],
+			[
+				"hea",
+				"headerBg"
+			],
+			[
+				"header",
+				"headerBg"
+			],
+			[
+				"de",
+				"deleteName"
+			],
+			[
+				"be",
+				"beDelete"
+			],
+			[
+				"h",
+				"headerBg"
+			],
+			[
+				"str",
+				"str1"
+			],
+			[
+				"arr",
+				"arr2"
+			],
+			[
+				"upda",
+				"updata"
+			],
+			[
+				"ico",
+				"iconIndex"
+			],
+			[
+				"pic",
+				"picIndex"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"icon",
+				"iconList"
+			],
+			[
+				"ua",
+				"updata"
+			],
+			[
+				"loac",
+				"localStorage"
+			],
+			[
+				"appid",
+				"appid"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"iocn",
+				"iconUrl"
+			],
+			[
+				"loca",
+				"localStorage"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"get",
+				"getHtml"
+			],
+			[
+				"templa",
+				"template"
+			],
+			[
+				"com",
+				"componentId"
+			],
+			[
+				"doUp",
+				"doUpdate"
+			],
+			[
+				"data",
+				"dataText"
+			],
+			[
+				"html",
+				"html中导航栏用户信息加载完全事件"
+			],
+			[
+				"page",
+				"page-up"
+			],
+			[
+				"use",
+				"use-button"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"qrcode",
+				"qrcodeUrl"
+			],
+			[
+				"mask",
+				"maskClose"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"background-",
+				"background-repeat"
+			],
+			[
+				"poster",
+				"posterTemplate"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"hello",
+				"helloFactory"
+			],
+			[
+				"dire",
+				"verbose_directive	AngularJS"
+			],
+			[
+				"c",
+				"controller	AngularJS"
+			],
+			[
+				"$root",
+				"$rootScope	AngularJS(DI)"
+			],
+			[
+				"image",
+				"imageUrl"
+			],
+			[
+				"$rou",
+				"$routeParams	AngularJS"
+			],
+			[
+				"tab",
+				"tableExport"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "themes/yelee/_config.yml",
+			"settings":
+			{
+				"buffer_size": 4082,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "themes/yelee/layout/_partial/article.ejs",
+			"settings":
+			{
+				"buffer_size": 2831,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "themes/yelee/layout/_partial/comments/gitalk.ejs",
+			"settings":
+			{
+				"buffer_size": 547,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "js",
+		"selected_items":
+		[
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"HTML",
+				"Set Syntax: HTML"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"li",
+				"Package Control: List Packages"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control set",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"sett",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"set",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"package li",
+				"Package Control: List Packages"
+			],
+			[
+				"remove p",
+				"Package Control: Remove Package"
+			],
+			[
+				"git checkout",
+				"Git: Checkout Tag"
+			],
+			[
+				"jsp",
+				"Set Syntax: Java Server Page (JSP)"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/myblog/tsrot.github.io",
+		"/F/myblog/tsrot.github.io/themes",
+		"/F/myblog/tsrot.github.io/themes/yelee",
+		"/F/myblog/tsrot.github.io/themes/yelee/layout",
+		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/comments"
+	],
+	"file_history":
+	[
+		"/F/myblog/tsrot.github.io/themes/yelee/layout/layout.ejs",
+		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/footer.ejs",
+		"/F/test_demo/gitalk.html",
+		"/F/test_demo/test_xxs.html",
+		"/F/jquery-validation/src/core.js",
+		"/F/test_demo/jquery-validation/demo/bootstrap/index.html",
+		"/F/test_demo/jquery-validation/Gruntfile.js",
+		"/F/test_demo/test_focus.html",
+		"/F/test_demo/jquery-validation/lib/_customized-chosen_v1.5.1/chosen.jquery.js",
+		"/F/test_demo/jquery-validation/validation.jquery.json",
+		"/F/test_demo/jquery-validation/package.json",
+		"/F/test_demo/test_img_error.html",
+		"/F/react-demo/redux-saga-beginner-tutorial/test_img_error.html",
+		"/E/百业项目/百业APP（M）/government/src/pages/share/viewmodel.js",
+		"/F/react-demo/dva-example-user-dashboard/src/index.js",
+		"/F/react-demo/redux-saga/examples/shopping-cart/server.js",
+		"/F/react-demo/redux-saga/examples/shopping-cart/webpack.config.js",
+		"/F/react-demo/redux-saga/examples/async/webpack.config.js",
+		"/F/react-demo/redux-saga/examples/async/server.js",
+		"/C/Users/xlq/Desktop/react-bootstrap/es/Form.js",
+		"/E/百业项目/百业APP（后端）/src/main/resources/application.test.properties",
+		"/C/Users/xlq/Desktop/bootstrap - 副本/js/src/alert.js",
+		"/C/Users/xlq/Desktop/react-bootstrap/package.json",
+		"/C/Users/xlq/AppData/Local/Temp/controller.jsp-revHEAD.svn000.tmp.jsp",
+		"/C/Users/xlq/AppData/Local/Temp/config.json-revHEAD.svn001.tmp.json",
+		"/E/百业项目/百业APP（M）/catering/catering/scripts.js",
+		"/C/Users/xlq/AppData/Local/Temp/Message.js-revHEAD.svn000.tmp.js",
+		"/E/百业项目/百业APP（PC）/data.json",
+		"/F/socket/chat-example/index.html",
+		"/F/socket/chat-example/index.js",
+		"/F/react-demo/react-zhihu/app/js/containers/QuestionApp.js",
+		"/F/react-demo/react-zhihu/app/js/main.js",
+		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/post/nav.ejs",
+		"/F/myblog/tsrot.github.io/themes/yelee/_config.yml",
+		"/F/myblog/tsrot.github.io/themes/yelee/source/css/style.styl",
+		"/F/myblog/tsrot.github.io/themes/yelee/source/css/_partial/article.styl",
+		"/F/myblog/tsrot.github.io/package.json",
+		"/F/myblog/tsrot.github.io/scaffolds/post.md",
+		"/F/myblog/tsrot.github.io/_config.yml",
+		"/F/react-demo/whatsapp/app/reducers/index.js",
+		"/F/react-demo/whatsapp/README.md",
+		"/F/myblog/tsrot.github.io/themes/yelee/source/img/QQ截图20170816150202.png",
+		"/F/myblog/tsrot.github.io/themes/yelee/source/css/_partial/mobile.styl",
+		"/C/Users/xlq/Desktop/cross-domain-master/8-WebSocket/serverReq.js",
+		"/C/Users/xlq/Desktop/cross-domain-master/8-WebSocket/staticReq/a.html",
+		"/C/Users/xlq/Desktop/cross-domain-master/8-WebSocket/serverRes.js",
+		"/F/myblog/tsrot.github.io/source/_posts/i-am-come-back.md",
+		"/F/myblog/tsrot.github.io/scaffolds/draft.md",
+		"/F/myblog/tsrot.github.io/scaffolds/page.md",
+		"/F/github/index.html",
+		"/F/im-test/NIM_Web_Demo/app.js",
+		"/F/im-test/NIM_Web_Demo/webdemo/im/js/cache.js",
+		"/C/Users/xlq/Desktop/applyInfo.jsx",
+		"/C/Users/xlq/Desktop/TableDefaultTr.jsx",
+		"/F/test_demo/hack.html",
+		"/F/test_demo/closure.html",
+		"/C/Users/xlq/Desktop/下载 (1).png",
+		"/C/Users/xlq/Desktop/下载.png",
+		"/F/test_demo/promise-demo.html",
+		"/F/chrome_download/080710121375/080710121375.html",
+		"/E/百业项目/百业APP（M）/index.html",
+		"/E/百业项目/百业APP（M）/gulpfile.js",
+		"/E/合作伙伴门户/HZPORTAL-RESOURCE/.git/config",
+		"/E/百业项目/百业APP（M）/lnspm/cfg.json",
+		"/E/百业项目/百业APP（M）/lnspm/gulpfile.js",
+		"/E/百业项目/百业APP（PC）/html/parts/main/build2.html",
+		"/E/百业项目/百业APP（PC）/js/controllers/main/build2.js",
+		"/E/百业项目/百业APP（M）/government/gulpfile.js",
+		"/E/百业项目/百业APP（M）/government/cfg.json",
+		"/E/百业项目/百业APP（M）/catering/src/app/api.js",
+		"/C/Users/xlq/AppData/Local/Temp/gulpfile.js-revHEAD.svn000.tmp.js",
+		"/C/Users/xlq/AppData/Local/Temp/build2.js-revHEAD.svn001.tmp.js",
+		"/C/Users/xlq/AppData/Local/Temp/build2.js-revHEAD.svn000.tmp.js",
+		"/E/百业项目/百业APP（PC）/js/controllers/lnspm/memberDetails.js",
+		"/E/百业项目/百业APP（PC）/js/controllers/lnspm/weChatSelfConfig.js",
+		"/E/百业项目/百业APP（PC）/js/controllers/lnspm/weChatStore.js",
+		"/C/Users/xlq/AppData/Roaming/Sublime Text 3/Packages/User/SVN.errors.log",
+		"/C/Users/xlq/AppData/Local/Temp/addProduct.js-revHEAD.svn001.tmp.js",
+		"/C/Users/xlq/AppData/Local/Temp/weChatStore.js-revHEAD.svn000.tmp.js",
+		"/C/Users/xlq/AppData/Local/Temp/addProduct.js-revHEAD.svn000.tmp.js",
+		"/E/百业项目/百业APP（M）/government/src/app/topics.js",
+		"/E/百业项目/百业APP（M）/beauty/beauty-test/scripts.js",
+		"/E/百业项目/百业APP（M）/beauty/src/app/api.js",
+		"/E/百业项目/百业APP（PC）/js/controllers/main/template.js",
+		"/E/百业项目/百业APP（PC）/js/config.js",
+		"/E/百业项目/百业APP（M）/lnspm/src/app/api.js",
+		"/E/百业项目/百业APP（PC）/js/dashboard.js",
+		"/E/百业项目/百业APP（M）/beauty/cfg.json",
+		"/E/百业项目/百业APP（M）/catering/cfg.json",
+		"/E/百业项目/百业APP（PC）/gulpfile.js",
+		"/E/百业项目/百业APP（PC）/config.json",
+		"/E/百业项目/百业APP（PC）/views/template/index.html",
+		"/E/百业项目/百业APP（PC）/js/controllers/beauty/beautyWeChatStore.js",
+		"/C/Users/xlq/Desktop/image-2017-07-12-18-45-24-593.png",
+		"/E/合作伙伴门户/HZPORTAL/api.md",
+		"/E/百业项目/百业APP（PC）/js/controllers/catering/weChatStore.js",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/weChatStore.html",
+		"/F/chrome_download/bootstrap-datepicker-1.6.4-dist/test.html",
+		"/F/chrome_download/bootstrap-datepicker-1.6.4-dist/index.html",
+		"/E/百业项目/百业APP（M）/catering/src/common/Message.js",
+		"/E/百业项目/百业APP（M）/lnspm/src/common/Message.js",
+		"/E/百业项目/百业APP（M）/beauty/src/common/Message.js",
+		"/C/Users/xlq/Desktop/image-2017-06-22-15-39-46-100.png",
+		"/C/Users/xlq/Desktop/image-2017-06-22-16-10-14-372.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-07-产品入库.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/icon/产品入库.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-02-初审.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-02-调试弹窗.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-03-硬件测试未通过.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-03-硬件评测.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-04-正式对接.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-05-软件测试未通过.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-05-软件评测.png",
+		"/E/合作伙伴门户/需求/icon-入库审核流程+调试进度弹窗/设备接入V8 视觉稿/设备接入-06-协议签署.png",
+		"/E/百业项目/百业APP（PC）/js/controllers/catering/addProduct.js",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/addProduct.html",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/product.html",
+		"/E/百业项目/百业APP（PC）/js/controllers/catering/product.js",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/takeTime.html",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/mainConfig.html",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/selfConfig.html",
+		"/E/百业项目/百业APP（PC）/js/controllers/beauty/beautyProduct.js",
+		"/D/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.3/bin/idea64.exe.vmoptions",
+		"/D/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.3/bin/idea.exe.vmoptions",
+		"/E/百业项目/百业APP（PC）/html/parts/catering/reservation.html",
+		"/E/百业项目/百业APP（PC）/html/parts/main/build1.html",
+		"/E/百业项目/百业APP（PC）/js/controllers/main/build1.js",
+		"/E/百业项目/百业APP（M）/microshop/src/app/api.js"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"E:\\百业项目\\百业APP（M）\\government\\src",
+			"F:\\myblog\\tsrot.github.io\\themes\\yelee",
+			"F:\\myblog\\tsrot.github.io",
+			"F:\\myblog\\tsrot.github.io\\themes\\yelee",
+			"F:\\myblog\\tsrot.github.io\\themes\\yelee\\source\\css",
+			"E:\\百业项目\\百业APP（M）",
+			"E:\\百业项目\\百业APP（M）\\lnspm",
+			"E:\\百业项目\\百业APP（M）",
+			"E:\\百业项目\\百业APP（M）\\beauty",
+			"E:\\百业项目\\百业APP（M）",
+			"E:\\百业项目\\百业APP（PC）",
+			"E:\\百业项目\\百业APP（M）",
+			"E:\\百业项目\\百业APP（PC）\\html",
+			"E:\\百业APP\\js",
+			"E:\\百业APP",
+			"E:\\百业APP\\js",
+			"E:\\百业APP",
+			"E:\\百业微海报 - 副本",
+			"E:\\百业微海报"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"option",
+			">\n",
+			"option",
+			"focusInvalid",
+			"ter",
+			"长按",
+			"bsClass",
+			"shareTipWechart",
+			"sinaShare",
+			"aboutme",
+			"subtitle",
+			"18",
+			"50px",
+			"copyright",
+			"app",
+			"[];\n",
+			"hyapps",
+			"<p",
+			"-",
+			"partnerId",
+			"getChildContext",
+			"catering",
+			"catring",
+			"catering",
+			"218.205.115.243:10080",
+			"todisabled",
+			"c",
+			"todisabled",
+			"inArray",
+			"addlist",
+			"changeIframe",
+			"$scope.addList",
+			"addList",
+			"indexList",
+			"each",
+			"changeIframe",
+			"toDisabled",
+			"inarray",
+			"addlist",
+			"require.js",
+			"bower_modules",
+			"industryMoudleList",
+			"bedelete",
+			"addlist",
+			"industryMoudleList",
+			"toDisabled",
+			"addList",
+			"industryMoudleList",
+			"server",
+			"218.205.115.243:10080",
+			"ip",
+			"218.205.115.243:10080",
+			"10080",
+			"testAppid",
+			"10080",
+			"assemble",
+			"dev",
+			"iphoneIp",
+			"copy-button",
+			"长按",
+			"必填",
+			"必填，公众号的唯一标识",
+			"长按二维码",
+			"lfnav",
+			">\n",
+			"firstNavList",
+			"leftNav",
+			"门店设置",
+			"list",
+			"getItems",
+			"getAfterList",
+			"industryName",
+			"data.industryName",
+			"data",
+			"prmise",
+			"Link",
+			"{this.handlerFilter}",
+			" <br/>",
+			"Footer",
+			"sessionStorage.iphoneUrl=",
+			"sessionStorage",
+			"adress",
+			"str2json",
+			"getInfo",
+			"afterrender",
+			"TempletPlatform",
+			"TempletPlatform_",
+			"TempletPlatform",
+			"util",
+			"upload",
+			"base64",
+			"upload",
+			"TempletPlatform",
+			"div",
+			"qu",
+			"em='true'",
+			"TableFileUpload",
+			"reactId",
+			"reactID",
+			"true",
+			"for",
+			"class",
+			"Breadcreambs",
+			"breadCrumbs",
+			"coEmail",
+			"tellPhone",
+			"connectName",
+			"<em>*</em>",
+			"L",
+			"coName",
+			"coPeople",
+			"coName",
+			"coTell",
+			"businessCode",
+			"License",
+			"businessCode",
+			"coPeople",
+			"coName",
+			"&nbsp;",
+			"q",
+			"Breadcrumes",
+			"label",
+			"loginName",
+			"thirdLogin",
+			"GeneralFactory",
+			"cateringid",
+			"218.205.115.242:18085",
+			"username"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "themes/yelee/_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4082,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1214,
+								1214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 912.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "themes/yelee/layout/_partial/article.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2609,
+								2609
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "themes/yelee/layout/_partial/comments/gitalk.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								493,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"build3",
+				"js\\controllers\\main\\build3.js"
+			],
+			[
+				"build4",
+				"js\\controllers\\main\\build4.js"
+			],
+			[
+				"app",
+				"js\\controllers\\main\\appList.js"
+			],
+			[
+				"applist",
+				"js\\controllers\\main\\appList.js"
+			],
+			[
+				"",
+				"js\\controllers\\main\\build4.js"
+			],
+			[
+				"buid4",
+				"dist\\js\\controllers\\main\\build1_458721c.js"
+			],
+			[
+				"dash",
+				"js\\dashboard.js"
+			],
+			[
+				"template",
+				"js\\controllers\\main\\template.js"
+			],
+			[
+				"build5",
+				"html\\parts\\main\\build5.html"
+			],
+			[
+				"build1",
+				"js\\controllers\\main\\build1.js"
+			],
+			[
+				"temp",
+				"js\\controllers\\main\\template.js"
+			],
+			[
+				"template.js",
+				"js\\controllers\\main\\template.js"
+			],
+			[
+				"build2",
+				"js\\controllers\\main\\build2.js"
+			],
+			[
+				"buil",
+				"js\\controllers\\main\\build2.js"
+			],
+			[
+				"bild2",
+				"js\\controllers\\main\\build2.js"
+			],
+			[
+				"build",
+				"js\\controllers\\main\\build2.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"F:\\react-demo\\redux-saga-beginner-tutorial\\saga-start.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

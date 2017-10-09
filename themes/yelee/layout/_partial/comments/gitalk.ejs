@@ -1,0 +1,16 @@
+<section class="gitalk" id="comments">
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '<%= theme.gitalk.clientID %>',
+      clientSecret: '<%= theme.gitalk.clientSecret %>',
+      repo: '<%= theme.gitalk.repo %>',
+      owner: '<%= theme.gitalk.owner %>',
+      admin: ['<%= theme.gitalk.admin %>'],
+      distractionFreeMode: false
+    })
+
+    gitalk.render('comments')
+  </script>
+</section>
