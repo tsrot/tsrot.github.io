@@ -1,6 +1,23 @@
 <section class="changyan" id="comments">
 <!--PC和WAP自适应版-->
-<div id="SOHUCS" ></div> 
+<%
+  var title = page.title;
+
+  if (is_archive()){
+    title = 'Archives';
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = 'Category: ' + page.category;
+  } else if (is_tag()){
+    title = 'Tag: ' + page.tag;
+  }
+ %>
+<div id="SOHUCS" sid="<%= title %>" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cytg5OL2c'; 
