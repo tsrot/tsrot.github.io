@@ -487,13 +487,19 @@
 	"expanded_folders":
 	[
 		"/F/myblog/tsrot.github.io",
+		"/F/myblog/tsrot.github.io/source",
 		"/F/myblog/tsrot.github.io/themes",
 		"/F/myblog/tsrot.github.io/themes/yelee",
 		"/F/myblog/tsrot.github.io/themes/yelee/layout",
-		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/comments"
+		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/comments",
+		"/F/myblog/tsrot.github.io/themes/yelee/source",
+		"/F/myblog/tsrot.github.io/themes/yelee/source/css",
+		"/F/myblog/tsrot.github.io/themes/yelee/source/css/_partial"
 	],
 	"file_history":
 	[
+		"/F/myblog/tsrot.github.io/themes/yelee/source/css/_partial/article.styl",
+		"/F/myblog/tsrot.github.io/.gitignore",
 		"/F/myblog/tsrot.github.io/themes/yelee/layout/layout.ejs",
 		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/footer.ejs",
 		"/F/test_demo/gitalk.html",
@@ -529,7 +535,6 @@
 		"/F/myblog/tsrot.github.io/themes/yelee/layout/_partial/post/nav.ejs",
 		"/F/myblog/tsrot.github.io/themes/yelee/_config.yml",
 		"/F/myblog/tsrot.github.io/themes/yelee/source/css/style.styl",
-		"/F/myblog/tsrot.github.io/themes/yelee/source/css/_partial/article.styl",
 		"/F/myblog/tsrot.github.io/package.json",
 		"/F/myblog/tsrot.github.io/scaffolds/post.md",
 		"/F/myblog/tsrot.github.io/_config.yml",
@@ -620,12 +625,11 @@
 		"/D/Program Files (x86)/JetBrains/IntelliJ IDEA 2016.3/bin/idea.exe.vmoptions",
 		"/E/百业项目/百业APP（PC）/html/parts/catering/reservation.html",
 		"/E/百业项目/百业APP（PC）/html/parts/main/build1.html",
-		"/E/百业项目/百业APP（PC）/js/controllers/main/build1.js",
-		"/E/百业项目/百业APP（M）/microshop/src/app/api.js"
+		"/E/百业项目/百业APP（PC）/js/controllers/main/build1.js"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -658,6 +662,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"article-inner",
 			"option",
 			">\n",
 			"option",
@@ -784,8 +789,7 @@
 			"thirdLogin",
 			"GeneralFactory",
 			"cateringid",
-			"218.205.115.242:18085",
-			"username"
+			"218.205.115.242:18085"
 		],
 		"highlight": true,
 		"in_selection": false,

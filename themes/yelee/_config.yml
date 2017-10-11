@@ -56,6 +56,10 @@ subnav:
 # Chose ONE as your comment system and keep others disable.
 # 选一个作为网站评论系统，其他保持禁用。
 
+changyan:
+  on: true
+
+
 gitalk:
   on: false
   clientID: '4cd745a81bd807c16d76'
@@ -73,7 +77,7 @@ disqus:
 
 
 youyan:
-  on: true
+  on: false
   id: 2141621
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
