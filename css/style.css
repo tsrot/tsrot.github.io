@@ -201,6 +201,14 @@ a {
     width: 100%;
   }
 }
+.changyan {
+  padding: 20px 40px;
+}
+@media (max-width: 767px) {
+  .changyan {
+    padding: 20px 10px;
+  }
+}
 #container {
   min-height: 100%;
 }
@@ -1317,7 +1325,7 @@ color
 .article-inner {
   position: relative;
   margin-bottom: 0px;
-  padding-bottom: 0.5em;
+  padding-bottom: 2em;
   word-break: break-word;
   -webkit-box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
   box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
@@ -1695,7 +1703,7 @@ li:hover {
 .copyright {
   width: 85%;
   max-width: 45em;
-  margin: 0 auto;
+  margin: 3em auto;
   padding: 0.5em 1.8em;
   border: 1px solid #d3d3d3;
   font-size: 0.93em;
@@ -1726,6 +1734,55 @@ li:hover {
 .copyright .copy-path:hover {
   color: #808080;
   cursor: pointer;
+}
+.shang {
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  background-color: #a9d6de;
+  color: #3e474e;
+  text-align: center;
+  line-height: 3em;
+  margin: 0 auto;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  bottom: 16.2em;
+}
+.shang:hover {
+  -webkit-box-shadow: 0 0 5px 5px #eee;
+  box-shadow: 0 0 5px 5px #eee;
+}
+.shang .qrcode {
+  width: 25em;
+  height: 18em;
+  padding: 0 1em;
+  position: absolute;
+  display: none;
+  left: -12em;
+  bottom: 3em;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.shang .qrcode .pay {
+  width: 45%;
+  float: left;
+}
+.shang .qrcode .pay img {
+  display: inline-block;
+  width: 12em;
+  height: 12em;
+}
+.shang .qrcode .pay h4 {
+  font-size: 12px;
+  line-height: 1em;
+  margin-top: -1em;
+}
+.shang:hover .qrcode {
+  display: block;
+}
+.mr-2 {
+  margin-right: 2em !important;
 }
 @-moz-keyframes cd-bounce-1 {
   0% {

@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于angular的$emit,$broadcast,$on通信机制 | Tsrot Space</title>
+  <title>也许是最后一篇博客 | Tsrot Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
-<meta name="keywords" content="angular">
+  <meta name="description" content="很多心酸痛楚很多遭遇不知道怎么与亲朋好友诉说，更不敢与父母讲，于是写下此文。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于angular的$emit,$broadcast,$on通信机制">
-<meta property="og:url" content="http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/index.html">
+<meta property="og:title" content="也许是最后一篇博客">
+<meta property="og:url" content="http://blog.xieliqun.com/2017/10/23/last-blog/index.html">
 <meta property="og:site_name" content="Tsrot Space">
-<meta property="og:description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
+<meta property="og:description" content="很多心酸痛楚很多遭遇不知道怎么与亲朋好友诉说，更不敢与父母讲，于是写下此文。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-01T07:04:53.000Z">
+<meta property="og:updated_time" content="2017-10-23T12:37:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于angular的$emit,$broadcast,$on通信机制">
-<meta name="twitter:description" content="好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。">
+<meta name="twitter:title" content="也许是最后一篇博客">
+<meta name="twitter:description" content="很多心酸痛楚很多遭遇不知道怎么与亲朋好友诉说，更不敢与父母讲，于是写下此文。">
   
     <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
   
@@ -236,11 +235,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-angular的同级通信方式详解" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-last-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/01/angular的同级通信方式详解/" class="article-date">
-      <time datetime="2016-07-01T05:35:49.000Z" itemprop="datePublished">2016-07-01</time>
+      <a href="/2017/10/23/last-blog/" class="article-date">
+      <time datetime="2017-10-23T11:29:26.000Z" itemprop="datePublished">2017-10-23</time>
 </a>
     </div>
   
@@ -253,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于angular的$emit,$broadcast,$on通信机制
+      也许是最后一篇博客
     </h1>
   
 
@@ -262,15 +261,11 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/我的日志/">我的日志</a>
     </div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -278,12 +273,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>好久没写博客了，从今天开始恢复更新！angular中两个同级之间进行通信，很常见的一种方式就是使用$emit,$broadcast,$on进行event，data通信。但是它有些限制，下面就来介绍详细用法和我遇到的一些坑。<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h3 id="首先介绍一下我一开始使用时遇到的坑"><a href="#首先介绍一下我一开始使用时遇到的坑" class="headerlink" title="首先介绍一下我一开始使用时遇到的坑"></a>首先介绍一下我一开始使用时遇到的坑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller=<span class="string">'parentCtrl'</span>&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</div><div class="line">	&lt;hr&gt;</div><div class="line">	&lt;div ng-controller=<span class="string">'childCtrl1'</span>&gt;</div><div class="line">		controller 1 &lt;p style=<span class="string">"color:red"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</div><div class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;br&gt;</div><div class="line">	&lt;div ng-controller=<span class="string">'childCtrl2'</span>&gt;</div><div class="line">		controller 2 &lt;p style=<span class="string">"color:green"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</div><div class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	var app = angular.module(<span class="string">'myapp'</span>,[]);</div><div class="line">	app.controller(<span class="string">'parentCtrl'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</div><div class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello parent controller'</span>;</div><div class="line">		<span class="variable">$scope</span>.age = <span class="string">'23'</span>;</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChange'</span>,<span class="keyword">function</span>(event,data)&#123;</div><div class="line">			console.log(<span class="string">"收到childCtrl1冒泡过来的数据"</span>,event);</div><div class="line">			<span class="variable">$scope</span>.age = data;</div><div class="line">			<span class="variable">$scope</span>.<span class="variable">$broadcast</span>(<span class="string">'ageChangeA'</span>,<span class="variable">$scope</span>.age);</div><div class="line">		&#125;);</div><div class="line">	&#125;]);</div><div class="line">	app.controller(<span class="string">'childCtrl1'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</div><div class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child1 controller'</span>;</div><div class="line">		<span class="variable">$scope</span>.age = <span class="string">'25'</span>;</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'age'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			console.log(<span class="variable">$scope</span>.age);</div><div class="line">		&#125;);</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$emit</span>(<span class="string">'ageChange'</span>,<span class="variable">$scope</span>.age);</div><div class="line">	&#125;]);</div><div class="line">	app.controller(<span class="string">'childCtrl2'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</div><div class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child2 controller'</span>;</div><div class="line">		<span class="variable">$scope</span>.age = <span class="string">'30'</span>;</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChangeA'</span>,<span class="keyword">function</span>(event,data)&#123;</div><div class="line">			<span class="variable">$scope</span>.age = data;</div><div class="line">			console.log(<span class="string">"收到parentCtrl广播过来的数据"</span>,event)</div><div class="line">		&#125;)</div><div class="line">	&#125;]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>1，childCtrl1可以触发ageChange事件并向父级传递。<br>2，父级parentCtrl也可以监听到ageChange事件，然后向子级广播ageChangeA事件（现在问题来了）。<br>3，childCtrl2不能够监听到ageChangeA事件（这是为什么呢？）。<br>-&gt; 收到childCtrl1冒泡过来的数据 Object {name: “ageChange”, targetScope: a, defaultPrevented: false, currentScope: g}</p>
-<h3 id="正确使用并填坑"><a href="#正确使用并填坑" class="headerlink" title="正确使用并填坑"></a>正确使用并填坑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-controller=<span class="string">'parentCtrl'</span>&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</div><div class="line">	&lt;hr&gt;</div><div class="line">	&lt;div ng-controller=<span class="string">'childCtrl1'</span>&gt;</div><div class="line">		controller 1 &lt;p style=<span class="string">"color:red"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</div><div class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span> ng-change=<span class="string">"change()"</span>&gt;      //ng-change事件触发</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;br&gt;</div><div class="line">	&lt;div ng-controller=<span class="string">'childCtrl2'</span>&gt;</div><div class="line">		controller 2 &lt;p style=<span class="string">"color:green"</span>&gt;&#123;&#123;name&#125;&#125;  --  &#123;&#123;age&#125;&#125;&lt;/p&gt;</div><div class="line">		&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"age"</span>&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	var app = angular.module(<span class="string">'myapp'</span>,[]);</div><div class="line">	app.controller(<span class="string">'parentCtrl'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</div><div class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello parent controller'</span>;</div><div class="line">		<span class="variable">$scope</span>.age = <span class="string">'23'</span>;</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChange'</span>,<span class="keyword">function</span>(event,data)&#123;</div><div class="line">			console.log(<span class="string">"收到childCtrl1冒泡过来的数据"</span>,event);</div><div class="line">			<span class="variable">$scope</span>.age = data;</div><div class="line">			<span class="variable">$scope</span>.<span class="variable">$broadcast</span>(<span class="string">'ageChangeA'</span>,<span class="variable">$scope</span>.age);</div><div class="line">		&#125;);</div><div class="line">	&#125;]);</div><div class="line">	app.controller(<span class="string">'childCtrl1'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</div><div class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child1 controller'</span>;</div><div class="line">		<span class="variable">$scope</span>.age = <span class="string">'25'</span>;</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$watch</span>(<span class="string">'age'</span>,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			console.log(<span class="variable">$scope</span>.age);</div><div class="line">		&#125;);</div><div class="line">		<span class="variable">$scope</span>.change = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			<span class="variable">$scope</span>.<span class="variable">$emit</span>(<span class="string">'ageChange'</span>,<span class="variable">$scope</span>.age);</div><div class="line">		&#125;</div><div class="line">	&#125;]);</div><div class="line">	app.controller(<span class="string">'childCtrl2'</span>, [<span class="string">'$scope'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>)&#123;</div><div class="line">		<span class="variable">$scope</span>.name = <span class="string">'hello child2 controller'</span>;</div><div class="line">		<span class="variable">$scope</span>.age = <span class="string">'30'</span>;</div><div class="line">		<span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">'ageChangeA'</span>,<span class="keyword">function</span>(event,data)&#123;</div><div class="line">			<span class="variable">$scope</span>.age = data;</div><div class="line">			console.log(<span class="string">"收到parentCtrl广播过来的数据"</span>,event);</div><div class="line">		&#125;)</div><div class="line">	&#125;]);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>对比上面两段代码细心的人应该已经发现了问题的所在。<br>$emit，$broadcast其中一个必须要有事件触发，否则子级中的$on将不能识别该事件。<br>-&gt; 收到childCtrl1冒泡过来的数据 Object {name: “ageChange”, targetScope: a, defaultPrevented: false, currentScope: g}<br>-&gt; 收到parentCtrl广播过来的数据 Object {name: “ageChangeA”, targetScope: g, defaultPrevented: false, currentScope: a}</p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>很多心酸痛楚很多遭遇不知道怎么与亲朋好友诉说，更不敢与父母讲，于是写下此文。<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""><br>大二暑假，我去了眼镜店配眼镜，测视力时发现右眼有一小块区域很模糊。当时眼镜店的老板说，应该是弱视，也没再多说了，就给我配了副眼镜。我就没太在意了，毕竟弱视没有太好的治疗方法。就这样，我戴着这副眼镜直到今年二月下旬，此时从发现右眼异常到那时已有四年多。今年过年期间，我就觉得这样下去不行，我得去医院看一下，看是否是其他问题，能否治好。</the></p>
+<p>今年二月下旬，春节放假过后回到公司，工作了两周后，我就去医院了。去医院检查了后才得知噩耗：左眼视力0.6，右眼0.05，右眼陈旧性视网膜脱落，左眼也发现有新脱落，右眼只能手术防止萎缩，左眼应该可以恢复大部分视力。一直以为左眼没什么问题，视力只有0.6，应该是眼睛度数上升，重新配副眼镜就好了，没想到也发生了脱落。从医院检查回来后，心情无比低落，我会不会从此就瞎了，我以后该怎么办？我觉的世界瞬间塌了。</p>
+<p>2月28日，父亲来了杭州，两日后，我在父亲的陪伴下上了手术台，进行左眼的视网膜脱落手术。一个半小时后手术终于顺利完成，做完手术后的那一夜，我痛的一夜没睡着，父亲也在床边一夜没睡的陪着。第二天，医生检查后说，可以出院回家静养，然后十天之后回来复查。我和父亲回到了我租的房子，在父亲的精心的照顾下，我恢复的很好，十天后去医院复查，医生也说恢复的挺好，右眼需要一个月后才能做手术。没办法，还有一个多月的时间，我就让父亲先回家了，毕竟家里也还有好多事，我不能让父亲一直留在这照顾我，于是我对父亲说我能照顾自己等做完了右眼的手术再回家静养，在接下来的一个月里，我就让楼下的餐馆每天送餐上来。终于熬到了一个月后，心想，现在应该可以做右眼的手术了吧。可是很多时候事情根本不会遂你的愿，不好事情又来了。医生说，上次做手术的眼睛又出现一个裂孔，还得再做一次激光手术。没办法，我只能再做一次激光手术，心情虽然沉到了谷底，但还是不断的安慰自己，幸好只是激光手术，眼睛没有太大恶化，再等半个月进行右眼的手术好了，毕竟右眼都已经四年了，也不在乎再等半个月好了。</p>
+<p>3月18日，在经过半个月的激光手术的休养后，终于可以进行右眼的手术了。这次我没让父亲过来陪我做手术，而是叫了我叔叔过来杭州，我老家离杭州还是挺远的，而刚好我叔叔在宁波来杭州也比较近，上次父亲坐火车来杭州就看他挺憔悴的，我不忍心再一次看到父亲无比憔悴的一面。这次的手术比较成功，和上次一样，第二天便出院了。经过一个月的休养，复查后，医生说恢复的还好，虽然视力恢复不了，但应该不会恶化萎缩了。心情虽然很沮丧，但也只能接受了。</p>
+<p>5月5日，一个更大的噩耗降临，父亲被查出肝癌晚期。此时，我刚好右眼手术后一个月的复查完。听到母亲哭着在电话里说父亲查出了肝癌，我大脑瞬间一片空白，一时不知道说什么，心里空空的，不知道该和母亲说什么。为什么会发生这种事情呢？为什么我刚做完手术父亲就查出了肝癌呢？我很担心父亲，心神不宁，情绪也很低落。虽然眼睛还有很大的不便，但我还是马上买火车票来到父亲所在的医院。看到父亲虚弱的躺在床上，床边还挂着吊瓶，我频临崩溃的内心瞬间有些支撑不住了，使劲让眼里的泪水不让它留出。</p>
+<p>我家本就清贫，这接连而来的厄运，瞬间让我们全家不知道该怎么办了。父亲母亲在家那边的县城开了一家小餐馆，收入本就一般，我也刚大学毕业，而妹妹还在读大一，父亲母亲供我和妹妹上大学已非常不容易了，可现在又接连发生了这么多的事。</p>
+<p>我来到医院的第二天，我和母亲去和主治医生咨询了父亲的一些情况，医生说，父亲的病情已经晚期了，而且肿瘤体积非常大，放化疗已经没什么效果了，现在只能吃一些药物减少病人的痛苦。母亲听到医生的话，瞬间有些撑不住了，我扶着母亲强撑着。</p>
+<p>住院了一个多星期，父亲经过一周的调理，病情已有所稳定。父亲的强硬坚持要出院，我们拗不过他。向医生咨询了注意事项，然后拿了几万块钱药就出院了。在家陪了父亲一个多月，我感觉这样下去不行，现在家里没有了任何经济来源，而父亲每个月的药费五千多，妹妹还在上学（父亲说，先不要告诉妹妹）。于是我就和母亲商量，先回公司上班了。我请了三个月的病假也快到期了。可能由于担心父亲的病情，每天晚上都焦虑的睡不着，眼睛恢复的好慢。</p>
+<p>6月5日，我回到公司开始上班。从回到公司上班到现在已经四个多月了，但这四个多月，我每天看着电脑敲代码都看得眼睛痛，每天晚上都焦虑的睡不着觉，我怕我的眼睛哪天真的瞎了，我怕父亲突然就走了，但是为了父亲能够多活一天，我默默地一天一天的坚持着，只要我多工作一天我就能为父亲多赚一天的医药费。每当在电话里听到母亲的哭泣，父亲在电话里虚弱的声音，我的心里都是无比的痛，无比的茫然和焦虑，我到底该怎么办，我还有未来吗？自杀的念头无数次的在我脑中出现过，可每次都被我默默的压了下去，每次都会让我想起家中的母亲父亲，如果我死了母亲和父亲该怎么办，但实在不知道自己还能坚持多久，这个念头能不能彻底压下去。也许哪一天我可能真的会抛开一切，了无声息的走了。</p>
+<p>9月23日，我去了体检。两天后，我收到体检报告，视力较两个月前有明显下降，身体的多项指标处于亚健康状态。我变得更焦虑了，我会不会就这样一天天等着变瞎，然后突然死去？我不敢告诉父母，我怕增加母亲的担心和加重父亲的病情。</p>
+<p>日子艰难的慢慢过着，我不知道它会持续多久，也许慢慢的会熬过去，也许下一刻戛然而止。</p>
+<p>今天特此写下这最后一篇博客，以此证明我曾经努力艰难的活着过，也许我那一天真的走了，就以此来作为我向这个世界诉说的最后话语吧！</p>
 
       
     </div>
@@ -308,13 +310,13 @@
     </div>
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/01/angular的同级通信方式详解/">关于angular的$emit,$broadcast,$on通信机制</a></p>
+        <p><span>本文标题:</span><a href="/2017/10/23/last-blog/">也许是最后一篇博客</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
-        <p><span>发布时间:</span>2016年07月01日 - 14时35分</p>
-        <p><span>最后更新:</span>2017年10月01日 - 15时04分</p>
+        <p><span>发布时间:</span>2017年10月23日 - 20时29分</p>
+        <p><span>最后更新:</span>2017年10月23日 - 20时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/01/angular的同级通信方式详解/" title="关于angular的$emit,$broadcast,$on通信机制">http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/07/01/angular的同级通信方式详解/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/23/last-blog/" title="也许是最后一篇博客">http://blog.xieliqun.com/2017/10/23/last-blog/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2017/10/23/last-blog/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -327,16 +329,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/07/17/移动端页面重构/">
-                    移动端页面重构
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/17/busy/">
-                    busy
+                <a href="/2016/11/06/react-study/">
+                    React学习资源汇总
                 </a>
             </div>
         
@@ -347,7 +343,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先介绍一下我一开始使用时遇到的坑"><span class="toc-number">1.</span> <span class="toc-text">首先介绍一下我一开始使用时遇到的坑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正确使用并填坑"><span class="toc-number">2.</span> <span class="toc-text">正确使用并填坑</span></a></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -412,7 +408,7 @@
         <section class="changyan" id="comments">
 <!--PC和WAP自适应版-->
 
-<div id="SOHUCS" sid="关于angular的$emit,$broadcast,$on通信机制" ></div> 
+<div id="SOHUCS" sid="也许是最后一篇博客" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cytg5OL2c'; 
@@ -429,15 +425,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/17/移动端页面重构/" title="上一篇: 移动端页面重构">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/17/busy/" title="下一篇: busy">
+            <a href="/2016/11/06/react-study/" title="下一篇: React学习资源汇总">
                 <i class="fa fa-angle-right"></i>
             </a>
         
