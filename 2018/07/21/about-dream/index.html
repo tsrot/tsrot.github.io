@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>html5 API postMessage跨域详解 | Tsrot Space</title>
+  <title>Tsrot Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。">
-<meta name="keywords" content="跨域">
+  <meta name="description" content="title: 关于梦想date: 2018-07-21 18:32:16tags:   职业规划 梦想  categories:   产品    关于产品，我一直认为，一个好的产品，它要满足企业的需求，它能解决用户需求，有黏性，有良好的交互体验。在这半年多时间里，我也一直往这个方向学习，理解并辅助公司的发展战略，学习挖掘用户需求，分析需求，管理需求，优化业务流程，保证良好的交互效果，分析运营数据，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html5 API postMessage跨域详解">
-<meta property="og:url" content="http://blog.xieliqun.com/2016/08/25/postMessage-cross-domain/index.html">
+<meta property="og:title" content="Tsrot Space">
+<meta property="og:url" content="http://blog.xieliqun.com/2018/07/21/about-dream/index.html">
 <meta property="og:site_name" content="Tsrot Space">
-<meta property="og:description" content="window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。">
+<meta property="og:description" content="title: 关于梦想date: 2018-07-21 18:32:16tags:   职业规划 梦想  categories:   产品    关于产品，我一直认为，一个好的产品，它要满足企业的需求，它能解决用户需求，有黏性，有良好的交互体验。在这半年多时间里，我也一直往这个方向学习，理解并辅助公司的发展战略，学习挖掘用户需求，分析需求，管理需求，优化业务流程，保证良好的交互效果，分析运营数据，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-01T07:04:53.000Z">
+<meta property="og:updated_time" content="2018-07-21T10:38:18.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html5 API postMessage跨域详解">
-<meta name="twitter:description" content="window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。">
+<meta name="twitter:title" content="Tsrot Space">
+<meta name="twitter:description" content="title: 关于梦想date: 2018-07-21 18:32:16tags:   职业规划 梦想  categories:   产品    关于产品，我一直认为，一个好的产品，它要满足企业的需求，它能解决用户需求，有黏性，有良好的交互体验。在这半年多时间里，我也一直往这个方向学习，理解并辅助公司的发展战略，学习挖掘用户需求，分析需求，管理需求，优化业务流程，保证良好的交互效果，分析运营数据，">
   
     <link rel="alternative" href="/atom.xml" title="Tsrot Space" type="application/atom+xml">
   
@@ -236,11 +235,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-postMessage-cross-domain" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-about-dream" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/25/postMessage-cross-domain/" class="article-date">
-      <time datetime="2016-08-25T05:11:32.000Z" itemprop="datePublished">2016-08-25</time>
+      <a href="/2018/07/21/about-dream/" class="article-date">
+      <time datetime="2018-07-21T10:32:16.038Z" itemprop="datePublished">2018-07-21</time>
 </a>
     </div>
   
@@ -249,66 +248,37 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      html5 API postMessage跨域详解
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。<br><a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>跨域是什么，我就不详细解释了，我相信你在看这篇文章前就已经了解的差不多了。现在我就直接进入实战阶段。</p>
-<p><strong>两个服务器</strong>：</p>
+        <p>title: 关于梦想<br>date: 2018-07-21 18:32:16<br>tags: </p>
 <ul>
-<li><a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a></li>
-<li><a href="http://127.0.0.1:9090" target="_blank" rel="external">http://127.0.0.1:9090</a></li>
+<li>职业规划</li>
+<li>梦想</li>
 </ul>
-<p>先建立两个不同域的测试环境。我用http-server（一个node服务器插件）建立了两个不同端口的本地服务器。</p>
-<p><strong>两个页面</strong>：</p>
+<p>categories: </p>
 <ul>
-<li>a.html</li>
-<li>b.html</li>
+<li>产品</li>
 </ul>
-<p>在<a href="http://127.0.0.1:8080" target="_blank" rel="external">http://127.0.0.1:8080</a> 中新建a.html，在<a href="http://127.0.0.1:9090" target="_blank" rel="external">http://127.0.0.1:9090</a> 中新建b.html。</p>
-<h3 id="数据发送"><a href="#数据发送" class="headerlink" title="数据发送"></a>数据发送</h3><p>postMessage允许用户在两个窗口或frame之间传递数据，无论这个window对象是不是同源都能发送。</p>
-<p>首先我们先在a.html中建立一个iframe。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe src=<span class="string">"http://127.0.0.1:9090/b.html"</span> name=<span class="string">"postIframe"</span> onload=<span class="string">"messageLoad()"</span>&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure>
-<p>当iframe加载完时，发送数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">messageLoad</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> url = <span class="string">"http://127.0.0.1:9090"</span>;</div><div class="line"></div><div class="line">	<span class="built_in">window</span>.postIframe.postMessage(<span class="string">"给我tsort的信息"</span>,url);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>postMessage包括两个参数data和url，data为发送的数据，url为发送地址。</p>
-<h3 id="数据接收"><a href="#数据接收" class="headerlink" title="数据接收"></a>数据接收</h3><p>html5新增了onmessage事件，它和onclick之类用法差不多。当窗口或frame接收到postMessage发送过来的数据时，将触发onmessage事件。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">	e = e || event;</div><div class="line">	alert(e.data);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>该事件接收一个event对象，这个对象有三个属性，分别为source，origin，data。</p>
-<p><strong>source</strong>： 消息源，消息的发送窗口/iframe。<br><strong>origin</strong>：消息源的URI(可能包含协议、域名和端口)，用来验证数据源。<br><strong>data</strong>：发送方发送给接收方的数据。</p>
-<h3 id="完整例子"><a href="#完整例子" class="headerlink" title="完整例子"></a>完整例子</h3><p>这个例子是这样的，a页面中有一个iframe，这个iframe是另一个域的b页面。当b加载完的时候，让它去给iframe里的页面发送一条信息。然后里面的页面立即回复已经接收到信息，然后再等三秒，回复a所请求的数据。</p>
-<p>a.html</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">	&lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;iframe src=<span class="string">"http://127.0.0.1:9090/b.html"</span> name=<span class="string">"postIframe"</span> onload=<span class="string">"messageLoad()"</span>&gt;&lt;/iframe&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">messageLoad</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> url = <span class="string">"http://127.0.0.1:9090"</span>;</div><div class="line">		<span class="built_in">window</span>.postIframe.postMessage(<span class="string">"给我tsort的信息"</span>,url); <span class="comment">//发送数据</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">		e = e || event;</div><div class="line">		<span class="built_in">console</span>.log(e.data); <span class="comment">//接收b返回的数据，在控制台有两次输出</span></div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>body&gt;</div><div class="line">&lt;<span class="regexp">/html&gt;</span></div></pre></td></tr></table></figure>
-<p>b.html</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">	&lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	<span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">		e = e || event;</div><div class="line">		alert(e.data); <span class="comment">//立即弹出a发送过来的数据</span></div><div class="line">		e.source.postMessage(<span class="string">"好的，请稍等三秒！"</span>,e.origin); <span class="comment">//立即回复a</span></div><div class="line"></div><div class="line">		<span class="keyword">var</span> postData = &#123;<span class="attr">name</span>:<span class="string">"tsrot"</span>,<span class="attr">age</span>:<span class="number">24</span>&#125;;</div><div class="line">		<span class="keyword">var</span> strData = <span class="built_in">JSON</span>.stringify(postData); <span class="comment">//json对象转化为字符串</span></div><div class="line">		setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			e.source.postMessage(strData,e.origin);</div><div class="line">		&#125;,<span class="number">3000</span>); <span class="comment">//3秒后向a发送数据</span></div><div class="line">	&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>body&gt;</div><div class="line">&lt;<span class="regexp">/html&gt;</span></div></pre></td></tr></table></figure>
+<excerpt in="" index="" |="" 首页摘要="">
 
+<p>关于产品，我一直认为，一个好的产品，它要满足企业的需求，它能解决用户需求，有黏性，有良好的交互体验。在这半年多时间里，我也一直往这个方向学习，理解并辅助公司的发展战略，学习挖掘用户需求，分析需求，管理需求，优化业务流程，保证良好的交互效果，分析运营数据，提高用户黏性。</p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<p>今天其实想谈一下关于梦想的事。</p>
+<p>2017年，在我身上其实发生了很多事。也许没有找到合适且懂你的人，很多事都宁愿埋在自己的心里，也不愿和别人分享。</p>
+<p>2017年前，我一直以为我会是一个很好的前端，会在这条道路上越走越远，成为一个别人认为很厉害的人，这应该是我当初的梦想。可是人生的轨迹似乎总是难以预料。</p>
+<p>2017年3月，我眼睛出现了问题，视网膜脱落，很严重。我请了三个月的病假，在家养病。这段时间，我不能看电脑玩手机，一切需要眼睛做的事情，我都做不了。我除了吃饭，就是躺在床上听有声书、广播新闻等。有一段时间，我真的很沮丧，迷茫。可能已经不能用迷茫来描述了，应该是绝望。</p>
+<p>这段时间让我想了很多，我考虑了最坏的情况，也想了我的未来。我在想，我未来会不会在哪个盲人按摩店，帮客人按摩，或是在街头卖艺乞讨 . . .</p>
+<p>我其实挺感谢老天给我这次经历的，虽然这远远不是我最悲惨的一段时光。养病期间，我一天可能十八小时都在听喜马拉雅，我听一些有声小说，一些心理学，一些历史评书，一些经融财经等等。这段时间让我明白了很多东西，让我再次回到社会的时候学会了怎么淡然处事，怎么管理情绪，怎么去规划自己。</p>
+<p>2017年6月，我再次回到了工作岗位，工作时眼睛还是很不舒服。虽然很不想去面对，但是现实的一些原因，我不得不去工作。我边工作边考虑怎么转行去做一些其他的事情。例如，去做销售，去做一些体力活，回老家开个小店 . . .</p>
+<p>2017年11月，我辞职了，辞去了技术的工作，开始了销售工作。由于没有销售经验，干的很吃力，我不懂得怎么找客户，不会打电话，不知道怎么向客户介绍产品。干了将近两个月，我还是放弃了。我重新考虑自己的职业发展，虽然我不能再回到技术岗位上了，但我还是热爱互联网这个行业。于是我决定，我要从事这个离技术最近的岗位，我要做产品。</p>
+<p>2018年1月，我正式开始了产品相关的工作。其实我发现自己一直有一个产品的梦想，12年大一的时候，学习着怎么去建站，怎么去运营推广网站，16年小程序火的时候，熬夜去看了微信的开发文档，想去做一款小游戏，17年年初的时候，想做一款别致的社交APP，熟人间的匿名社交，当初和朋友同事谈了想法后，好几个人都想和我一起去开发这款应用，我都开始准备写文档做原型了，可是后面因为眼睛的问题便放弃了。</p>
+<p>自从做了产品经理后，发现很多事情并不是自己想的那么简单。以前关于产品经理的理解都停留在“术”的层面，以为懂了一些画原型的工具就以为可以做产品经理了。现在逐渐明白“道”才是产品经理的关键。</p>
+<p>关于产品，我一直认为，一个好的产品，它要满足企业的需求，它能解决用户需求，有黏性，有良好的交互体验。在这半年多时间里，我也一直往这个方向学习，理解并辅助公司的发展战略，学习挖掘用户需求，分析需求，管理需求，优化业务流程，保证良好的交互效果，分析运营数据，提高用户黏性。</p>
+<p>努力去做好一个产品经理，努力去做好一个产品。不求可以改变世界，只想把事情做成，让用户更满意，但求可以为社会创造一点价值。</p>
+</the></excerpt>
       
     </div>
     
@@ -332,13 +302,13 @@
     </div>
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/25/postMessage-cross-domain/">html5 API postMessage跨域详解</a></p>
+        <p><span>本文标题:</span><a href="/2018/07/21/about-dream/"></a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Tsrot 的个人博客">Tsrot</a></p>
-        <p><span>发布时间:</span>2016年08月25日 - 14时11分</p>
-        <p><span>最后更新:</span>2017年10月01日 - 15时04分</p>
+        <p><span>发布时间:</span>2018年07月21日 - 19时32分</p>
+        <p><span>最后更新:</span>2018年07月21日 - 18时38分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/25/postMessage-cross-domain/" title="html5 API postMessage跨域详解">http://blog.xieliqun.com/2016/08/25/postMessage-cross-domain/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2016/08/25/postMessage-cross-domain/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/21/about-dream/" title="">http://blog.xieliqun.com/2018/07/21/about-dream/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.xieliqun.com/2018/07/21/about-dream/　　作者: Tsrot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -351,16 +321,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/08/26/windowName-cross-domain/">
-                    window.name跨域详解
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/08/21/prototype/">
-                    JS原型和原型链
+                <a href="/2016/11/06/react-study/">
+                    React学习资源汇总
                 </a>
             </div>
         
@@ -371,7 +335,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-number">1.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据发送"><span class="toc-number">2.</span> <span class="toc-text">数据发送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据接收"><span class="toc-number">3.</span> <span class="toc-text">数据接收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整例子"><span class="toc-number">4.</span> <span class="toc-text">完整例子</span></a></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -436,7 +400,7 @@
         <section class="changyan" id="comments">
 <!--PC和WAP自适应版-->
 
-<div id="SOHUCS" sid="html5 API postMessage跨域详解" ></div> 
+<div id="SOHUCS" sid="" ></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = 'cytg5OL2c'; 
@@ -453,15 +417,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/26/windowName-cross-domain/" title="上一篇: window.name跨域详解">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/21/prototype/" title="下一篇: JS原型和原型链">
+            <a href="/2016/11/06/react-study/" title="下一篇: React学习资源汇总">
                 <i class="fa fa-angle-right"></i>
             </a>
         
